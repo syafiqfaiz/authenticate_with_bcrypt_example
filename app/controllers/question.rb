@@ -22,7 +22,7 @@ get '/question/:id/edit' do
 end
 
 post '/questions' do
-	@user = User.find(session[:user_id])
+	@user = user
 	@question = @user.questions.new(params[:question])
 
 	if @question.save
@@ -40,12 +40,9 @@ post '/questions/:id/edit' do
 end
 
 post '/question/:id' do
-	byebug
 	@question = Question.find(params[:id])
 	@question.delete
-
+	redirect '/'
 end
 
 
-
-post '/question/:question_id/answer/new'
