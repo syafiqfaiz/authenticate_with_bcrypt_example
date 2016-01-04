@@ -1,0 +1,21 @@
+<div class="all_question">
+	<ul>
+		<% @questions.each do |question| %>
+			<li>
+				<%= question.text %> 
+				<small>by <%= question.user.email %></small>
+				<form action="/question/<%= question.id %>" method="post">
+					<button>Delete</button>
+				</form>
+			</li> 
+		<% end %>
+	</ul>
+</div>
+
+<div class="my_question">
+	<ul>
+		<% @my_questions.each do |question| %>
+			<li><%= question.text %> <small>by <%= question.user.email %></small></li>
+		<% end %>
+	</ul>
+</div>

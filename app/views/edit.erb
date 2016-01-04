@@ -1,0 +1,4 @@
+<form action="/questions/<%= @question.id%>/edit" method="post">
+	<input type="text" name='question[text]' value="<%=@question.text%>">
+	<button>Edit</button>
+</form>
